@@ -5,7 +5,7 @@ build:
   version: "3.0"
 
 accounts:
-  message: "Welcome to EazyBank accounts related local in order APIs "
+  message: "Welcome to EazyBank accounts related dear in order APIs "
   contactDetails:
     name: "John Doe - Developer"
     email: "john@eazybank.com"
