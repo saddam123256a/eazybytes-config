@@ -1,43 +1,11 @@
 server:
   port: 8072
 
-spring:
-  application:
-    name: gatewayserver
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
-      routes:
-        - id: accounts-service
-          uri: lb://ACCOUNTS
-          predicates:
-            - Path=/accounts/**
-        # Add more routes here for other microservices
-
 eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8070/eureka/
   instance:
     preferIpAddress: true
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    gateway:
-      enabled: true
-  info:
-    env:
-      enabled: true
-
-info:
-  app:
-    name: "gatewayserver"
-    description: "Eazy Bank Gateway Server Application"
-    version: "1.0.0"
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
